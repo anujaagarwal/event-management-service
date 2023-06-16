@@ -49,7 +49,7 @@ Retrieve a list of all events.
 
 Create a new event.
 
-- **URL**: `/events`
+- **URL**: `/create_event`
 - **Method**: POST
 - **Request**: JSON
 - **Response**: JSON
@@ -162,7 +162,7 @@ Retrieve a summary of a specific event.
 
 Book tickets for an event.
 
-- **URL**: `/events/{event_id}/bookings`
+- **URL**: `/events/{event_id}/book`
 - **Method**: POST
 - **Request**: JSON
 - **Response**: JSON

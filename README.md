@@ -158,6 +158,70 @@ Retrieve a summary of a specific event.
 }
 ```
 
+### Book Tickets
+
+Book tickets for an event.
+
+- **URL**: `/events/{event_id}/bookings`
+- **Method**: POST
+- **Request**: JSON
+- **Response**: JSON
+
+#### Request Body
+
+```json
+{
+  "user_id": 1,
+  "quantity": 2
+}
+```
+
+- `user_id` (integer): The ID of the user booking the tickets.
+- `quantity` (integer): The number of tickets to book.
+
+#### Response
+
+```json
+{
+  "booking_id": 1,
+  "event_id": 1,
+  "user_id": 1,
+  "quantity": 2,
+  "booking_time": "2023-06-14T10:30:00Z"
+}
+```
+
+### View Tickets
+
+View the tickets booked by a user.
+
+- **URL**: `/users/{user_id}/tickets`
+- **Method**: GET
+- **Response**: JSON
+
+#### Response
+
+```json
+[
+  {
+    "ticket_id": 1,
+    "event_id": 1,
+    "event_name": "Event 1",
+    "event_date": "2023-06-15",
+    "event_location": "Event 1 location",
+    "quantity": 2
+  },
+  {
+    "ticket_id": 2,
+    "event_id": 2,
+    "event_name": "Event 2",
+    "event_date": "2023-06-20",
+    "event_location": "Event 2 location",
+    "quantity": 1
+  }
+]
+```
+
 ## Error Responses
 
 If an error occurs while processing a request, the API will respond with an appropriate error message in the JSON format. The response will include an HTTP status code indicating the type of error.
